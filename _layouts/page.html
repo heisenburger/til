@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="pad-100">
+
+    <main class="relative hide-overflow z-1">
+      <div class="container">
+        {% include logo.html %}
+      </div>
+
+      <div class="container fullwidth push-top enter-frombottom">
+        <h1 class="f-i hero">{{ page.title }}</h1>
+        <p class="l">{{ page.date | date: "%-d %B %Y" }}</p>
+        <hr class="border-{{page.theme}}"/>
+      </div>
+
+      <div class="enter-frombottom container">
+        {{ content }}
+      </div>
+
+      <hr class="border-{{page.theme}}">
+
+    </main>
+
+    <nav class="expand z-0 fixed">
+      <div class="container top">
+        {% include logo.html %}
+      </div>
+
+      <div class="container bottom">
+
+        <ul class="posts">
+          {% assign entries = site.posts %}
+          {% for entry in entries %}
+              <li><a class="l-nu _hover _focus" href="{{ entry.url }}">{{ entry.title }}</a></li>
+          {% endfor %}
+        </ul>
+
+        {% include nav.html %}
+
+      </div>
+    </nav>
+
+  </body>
+
+</html>

@@ -1,0 +1,18 @@
+title: TIL | Serena Chen
+email: serenadantingchen@gmail.com  
+description: Small tidbits of learning
+baseurl: ""
+url: "til.serena.nz"
+twitter_username: Sereeena
+github_username:  heisenburger
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+sass:
+  sass_dir: _sass
+  style: compressed

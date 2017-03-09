@@ -1,0 +1,181 @@
+// Positioning
+
+.abs {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.float-left {
+  float: left;
+  padding-right: 3rem;
+}
+
+.float-right {
+  float: right;
+  padding-left: 3rem;
+}
+
+.push-top {
+  margin-top: 10vh;
+}
+
+.space-top {
+  padding-top: $spacer*2;
+}
+
+.space-bottom {
+  padding-bottom: $spacer*2;
+}
+
+.space-bottom-x2 {
+  padding-bottom: $spacer*4;
+}
+
+.pad-100 {
+  padding-bottom: calc(100vh);
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+// Sizing
+
+.fullwidth {
+  width: 100vw;
+}
+
+.width-main {
+  width: 100vw;
+  height: auto;
+  margin-right: 2rem;
+  vertical-align: top;
+  @include query($bp-tablet){
+    width: 60vw;
+    vertical-align: middle;
+  }
+}
+
+.width-aside {
+  width: 30vw;
+  height: auto;
+}
+
+.expand {
+  height: 100%;
+  width: 100%;
+}
+
+// Containers and wraps
+
+.container {
+  left: 0;
+  padding: 2rem;
+  @include query($bp-tablet){
+    padding: 10vh 10vw;
+  }
+}
+
+.measure {
+  max-width: 35em;
+}
+
+.scroll-x {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0 2rem 2rem;
+  @include query($bp-tablet){
+    padding: 0 10vw 10vh;
+  }
+
+}
+
+// Display
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+// Borders and rulers
+
+.border-accent {
+  border-color: $accent-color;
+}
+
+.border-pink {
+  border-color: $pink-color;
+}
+
+.border-blue {
+  border-color: $blue-color;
+}
+
+.border-green {
+  border-color: $green-color;
+}
+
+.frame {
+  border-width: 0.5rem;
+  border-style: solid;
+  padding: 2rem;
+}
+
+// Lists
+
+.posts, .nav {
+  list-style: none;
+  padding: 0 0 1rem;
+  li {
+    padding: 0.5em;
+    margin: -0.5em -0.5em 0em;
+    @include query($bp-desktop){
+      padding: 0.3em;
+      margin: -0.3em -0.3em 0;
+    }
+  }
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+// logo
+
+.logo {
+  // color: currentColor;
+  width: 4rem;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  @include query($bp-desktop){
+    width: 5rem;
+  }
+}

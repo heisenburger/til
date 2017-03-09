@@ -1,0 +1,176 @@
+// Reading elements
+
+p, ul {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.7em;
+  @include query ($bp-tablet){
+    font-size: 1.3rem;
+  }
+  @include query ($bp-desktop){
+    font-size: 1.5rem;
+  }
+}
+
+ul {
+  @include query($bp-desktop){
+    padding-left: 2rem;
+  }
+}
+
+blockquote {
+  font-weight: 600;
+  padding: 1rem 0 1rem 1rem;
+  border-left: 0.5rem solid $text-color;
+  @include query($bp-desktop){
+    margin-left: 2rem;
+    padding: 1rem 0 1rem 2rem;
+    border-left: 1rem solid lighten($accent-color,30%);
+  }
+}
+
+h2 {
+  font-weight: normal;
+  @include query($bp-tablet){
+    font-weight: 300;
+  }
+  @include query($bp-desktop){
+    font-weight: 200;
+  }
+}
+
+// font faces
+
+.f-disp {
+  font-family: $serif;
+  font-weight: normal;
+  @include query($bp-desktop){
+    font-family: $display;
+  }
+}
+
+.f-i {
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+// font sizes
+
+.hero {
+  font-size: 3rem;
+  line-height: 1em;
+  letter-spacing: -0.02em;
+  @include query($bp-tablet){ font-size: 5rem; }
+  @include query($bp-desktop-wide){ font-size: 7rem; }
+}
+
+.xxl {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  @include query($bp-tablet){ font-size: 4rem; }
+  @include query($bp-desktop-wide){ font-size: 5rem; }
+}
+
+.xl {
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  @include query($bp-tablet){ font-size: 3rem; }
+  @include query($bp-desktop-wide){ font-size: 4rem; }
+}
+
+.l {
+  font-size: 1.3rem;
+  @include query($bp-tablet){ font-size: 1.6rem; }
+  @include query($bp-desktop-wide){ font-size: 2rem; }
+}
+
+// Set colors
+
+.color-accent {
+  color: $accent-color;
+}
+
+.color-pink {
+  color: $pink-color;
+}
+
+.color-blue {
+  color: $blue-color;
+}
+
+.color-green {
+  color: $green-color;
+}
+
+// Nav sizing
+
+.posts {
+  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  @include query($bp-tablet){
+    font-size: 2rem;
+  }
+  @include query($bp-desktop){
+    font-size: 3rem;
+  }
+  @include query($bp-desktop-wide){
+    font-size: 6vh;
+  }
+}
+
+.nav {
+  @include query($bp-desktop){
+    font-size: 1.5rem;
+  }
+}
+
+// Links
+
+.l-nu {
+  text-decoration: none;
+  background-image: none;
+  &:hover {
+    border: 0;
+  }
+}
+
+._ {
+  &::after {
+    content: '__';
+  }
+}
+
+._hover {
+  &::after{
+    content: '__';
+    color: transparent;
+  }
+  &:hover {
+    border: 0;
+    &::after{
+      color: $text-color;
+      animation: blink 1s infinite;
+    }
+  }
+}
+
+._focus {
+  &:focus {
+    // outline: 0;
+    border: 0;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    &::after {
+      content: '__';
+      color: $text-color;
+      transition: 100ms;
+    }
+  }
+}
+
+// Lists
+
+.no-bullet {
+  list-style: none;
+}
