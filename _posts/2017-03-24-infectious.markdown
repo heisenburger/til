@@ -11,9 +11,9 @@ Wondering whether I should be concerned or not, I did a quick google. Looks like
 
 Long story short, the local immune response to two different rhinoviruses (aka the common cold) will essentially be the same. These include [macrophages](https://en.wikipedia.org/wiki/Macrophage) (i.e. the gross green stuff you blow out of your nose, or cough up out your lungs), which just needs to "eat up" the virus to disable it.
 
-The adaptive immune response (B-cells and T-cells) might have a tricker time due to two different activating signals, but it's "[hard to max out an immune response](http://scienceblogs.com/webeasties/2013/01/15/askscience-is-it-possible-to-get-multiple-different-coldsflu-viruses-at-the-same-time/)" and the two sets of viruses will be in competition with each other.
+The adaptive immune response (B-cells and T-cells) might have a tricker time due to two different activating signals, but the two sets of viruses will be in competition with each other for resources (cells to kill) at the same time, so.
 
-So TL;DR: contracting two different strands of the common cold is nothing to be concerned about.
+**TL;DR:** contracting two different strands of the common cold is nothing to be concerned about.
 
 ### So when should one be concerned with a superinfection?
 
