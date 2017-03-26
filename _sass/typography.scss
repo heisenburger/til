@@ -1,6 +1,6 @@
 // Reading elements
 
-p, ul {
+p, ul, ol {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.7em;
@@ -12,7 +12,10 @@ p, ul {
   }
 }
 
-ul {
+ul, ol {
+  li {
+    margin-bottom: 0.5em;
+  }
   @include query($bp-desktop){
     padding-left: 2rem;
   }
