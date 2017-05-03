@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "To cow is human; to calm divine"
+title:  "To cow is human; to verb divine"
 date:   2017-04-21 20:45:21 +1300
 tags: language
 ---
@@ -21,4 +21,6 @@ tags: language
 >_"has he cowed you all with his threats?"_
 
 The origins of this form of 'cow' comes from the old 16th century Old Norse _kúga_, meaning _to oppress_. This is interesting given that _cow_ the noun, the one we're all familiar with (goes moo, yeah that one), has Germanic origins (which then flowed on to Old English, Dutch and German).
+
+One word. Two completely different origins.
 
