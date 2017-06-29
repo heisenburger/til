@@ -7,4 +7,4 @@ tags: language
 
 I... didn't know
 
-![twitter conversation about people with penises peeing in the sink](/images/pee.png)
+![twitter conversation about people with penises peeing in the sink]({{ site.baseurl }}/images/pee.png)
