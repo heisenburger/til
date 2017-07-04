@@ -1,0 +1,53 @@
+---
+layout: page
+title:  "Netmasks"
+date:   2017-07-04 10:26:21 +1300
+tags: language
+---
+
+At work today I was given a bunch of IPs to whitelist. They were presented like
+
+	XXX.XX.XXX.XXX/32
+
+To which I immediately asked,
+
+> What does the `/32` mean?
+
+# Let's back it up: what's an IP address again?
+
+32-bit IP address has two parts: one part identifies the network (with the network number) and the other part identifies the specific machine or host within the network (with the host number). An organization can use some of the bits in the machine or host part of the address to identify a specific subnet. Effectively, the IP address then contains three parts: the network number, the subnet number, and the machine number.
+
+An example IP address might look like this:
+
+	130.5.5.25
+
+Each of the decimal numbers represents a string of eight binary digits. Thus, the above IP address really is this string of 0s and 1s:
+
+	10000010.00000101.00000101.00011001
+
+IP addresses can be one of several classes, each determining how many bits represent the network number and how many represent the host number. The most common class used by large organizations (Class B) allows 16 bits for the network number and 16 for the host number. Using the above example, here's how the IP address is divided:
+
+	<--Network address--><--Host address--> 130.5 . 5.25
+
+If you wanted to add subnetting to this address, then some portion (in this example, eight bits) of the host address could be used for a subnet address. Thus:
+
+	<--Network address--><--Subnet address--><--Host address--> 130.5 . 5 . 25
+
+Once a packet has arrived at an organization's gateway or connection point with its unique network number, it can be routed within the organization's internal gateways using the subnet number. The router knows which bits to look at (and which not to look at) by looking at a **subnet mask**, which is a screen of numbers that tells you which numbers to look at underneath. In a binary mask, a "1" over a number says "Look at the number underneath"; a "0" says "Don't look." Using a mask saves the router having to handle the entire 32 bit address; it can simply look at the bits selected by the mask.
+
+Similarily, a **netmask** is a string of 0s and 1s that mask or screen out the network part of an IP address so that only the host computer part of the address remains. The binary 1s at the beginning of the mask turn the network ID part of the IP address into 0s. The binary 0s that follow allow the host ID to remain. A frequently-used netmask is 255.255.255.0. (255 is the decimal equivalent of a binary string of eight ones.) Used for a Class C subnet (one with up to 255 host computers), the ".0" in the "255.255.255.0" netmask allows the specific host computer address to be visible.
+
+The `XXX.XX.XXX.XXX/32` above is a netmask under the CIDR (Classless Inter-Domain Routing) method. It's a way to allow more flexible allocation of IP addresses than was possible with the original system of IP address classes (A, B, C, D). As a result, the number of available Internet addresses was greatly increased, which significantly extended the useful life of IPv4.
+
+# IP classes
+
+Originally, IP addresses were assigned in four major address classes, A through D. Each of these classes allocates one portion of the 32-bit IP address format to identify a network gateway -- the first 8 bits for class A, the first 16 for class B, and the first 24 for class C. The remainder identify hosts on that network -- more than 16 million in class A, 65,535 in class B and 254 in class C. (Class D addresses identify multicast domains.)
+
+A big problem with the class system was that one of the most commonly used classes was Class B. An organization that needed more than 254 host machines would often get a Class B license, even though it would have far fewer than 65,534 hosts. This resulted in most of the block of addresses allocated going unused. The inflexibility of the class system accelerated IPv4 address pool exhaustion.
+
+CIDR reduces the problem of wasted address space by providing a new and more flexible way to specify network addresses in routers. CIDR lets one routing table entry represent an aggregation of networks that exist in the forward path that don't need to be specified on that particular gateway. This is much like how the public telephone system uses area codes to channel calls toward a certain part of the network. This aggregation of networks in a single address is sometimes referred to as a *supernet*.
+
+# So what does the `/32` mean?
+
+An IP address suffixed with `/x` indicates that the first `x` bits of the address specifies the network, while the rest specify the host addresses. So a 32-bit IP address with a `/32` netmask specifies that the entire IP points to a network.
+
